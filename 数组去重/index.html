@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+   <script>
+   /*******  数组去重 第一种方法 *********/
+/*   var arr1 = [2,3,4,5,1,2,3,5,7,8,9,5];
+
+   function ad(arr){
+
+    var obj = {}, i=0, len = arr.length, key;
+
+    for (; i < len; i ++){
+        obj[arr[i]] = arr[i] ;
+    }
+
+    arr.length = 0 ;
+
+    for (key in obj){
+        arr.push(obj[key]);
+    }
+
+    return arr;
+   }
+   var r = ad(arr1);
+
+   console.log(r);*/
+
+     /*******  数组去重 第二种方法 *********/
+
+   var arr2 = [2,3,4,5,1,2,'3',5,7,8,9,5,'8'];
+
+   function ad(arr){
+        var tmpArr = [], i,len =arr.length;
+
+        for (i=0;i<len;i++){
+            if(!isInArray(tmpArr,arr[i])){
+                tmpArr.push(arr[i]);
+            }
+        }
+        return tmpArr;
+   }     
+    function isInArray(arr,item) {
+        var i , len = arr.length;
+        for (i=0;i<len; i++){
+            if(arr[i]=== item){
+                return true;
+            }
+        }
+        return false
+    }       
+
+  var r = ad(arr2);
+
+  console.log(r);
+/*  var arr3 = [1,4,3,4,3,5,6,7];
+
+    function dd(arr){
+        var tmpArr=[] , i , len=arr.length;
+        
+    }*/
+
+   </script> 
+</body>
+</html>
